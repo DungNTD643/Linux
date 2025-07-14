@@ -1,0 +1,13 @@
+Zombie process
+Xảy ra khi: Tiến trình con kết thúc, nhưng cha không gọi wait() để thu dọn thông tin.
+
+Trạng thái: <defunct>, vẫn tồn tại trong bảng tiến trình.
+
+Ảnh hưởng: Nếu có quá nhiều Zombie, sẽ làm đầy bảng tiến trình, gây lỗi không tạo được tiến trình mới.
+
+Orphan process
+Xảy ra khi: Tiến trình cha kết thúc trước con.
+
+Kernel sẽ tự động chuyển orphan cho init (PID 1) quản lý.
+
+Ảnh hưởng: Không gây lỗi, đây là cơ chế quản lý hợp lệ và an toàn trong Linux.

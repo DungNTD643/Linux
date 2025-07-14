@@ -1,0 +1,9 @@
+Khi exec() (hoặc một hàm họ exec như execlp(), execvp(), ...) được gọi thành công trong tiến trình con, thì toàn bộ không gian địa chỉ (memory space) và mã lệnh của tiến trình con bị thay thế hoàn toàn bởi chương trình mới.
+
+
+Code (text segment)	Bị ghi đè hoàn toàn bởi mã của chương trình mới
+Data segment (biến toàn cục, static)	Cũng bị ghi đè bởi chương trình mới
+Heap	                                Bị xoá sạch và thay đổi theo chương trình mới
+Stack	                                Bị thiết lập lại để chứa argv, envp, và stack frame mới
+PID	                                    Giữ nguyên (tiến trình vẫn là tiến trình cũ về mặt hệ thống)
+Mã lệnh cũ	                            Mất vĩnh viễn — không thể quay lại chương trình ban đầu
